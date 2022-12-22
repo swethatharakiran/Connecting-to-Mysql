@@ -1,11 +1,9 @@
 const express=require('express');
-const path=require('path');
+//const path=require('path');
 const router=express.Router();
-const rootdir=require('../util/path');
+//const rootdir=require('../util/path');
+const productscontroller=require('../controllers/products');
 
-router.post('/success',(req,res,next)=>{
-    
-    res.send('<html><h1>Form Successfully filled</h1></html>');
-});
+router.post('/success',productscontroller.postsuccesspage);
 
 module.exports=router;

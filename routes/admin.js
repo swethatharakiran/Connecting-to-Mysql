@@ -2,18 +2,12 @@ const express=require('express');
 const path=require('path');
 
 const router=express.Router();
-const rootdir=require('../util/path');//path.js file
+//const rootdir=require('../util/path');//path.js file
+const productscontroller= require('../controllers/products');
 
 
-router.get('/add-product',(req,res,next)=>{
-    console.log('In the middleware');
-    res.sendFile(path.join(rootdir,'views','add-product.html'));
-    
-});
+router.get('/add-product',productscontroller.getaddproductpage);
 
-router.post('/product',(req,res,next)=>{
-    console.log(req.body);
-    res.redirect('/');
-});
+router.post('/product',productscontroller.postproductpage);
 
 module.exports=router;
