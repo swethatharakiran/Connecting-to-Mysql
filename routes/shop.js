@@ -4,6 +4,6 @@ const router=express.Router();
 //const rootdir=require('../util/path');
 const productscontroller=require('../controllers/products');
 
-router.get('/',productscontroller.getproductpage);
+router.get('/shop',productscontroller.getproductpage);
 
 module.exports=router;

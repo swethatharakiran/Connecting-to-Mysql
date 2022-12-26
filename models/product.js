@@ -10,15 +10,36 @@ module.exports=class Product{
     }
 
     save(){
+                
+        //const saved=Product.fetchAll(cb);
+        fs.readFile(p,'utf8',(err,data)=>{
+            let products=[];
+            if(err)()=>{
+                console.log(err);
+            }
+            else{
+            //return data;
+            products=JSON.parse(data);
+            }
+            products.push(this);
+       
+        //saved=JSON.parse(saved);
+        //console.log(saved,'abc');
+        //saved.push(this);
+
+        fs.writeFile(p,JSON.stringify(products),err=>{
+            if(err)()=>{console.log(err)}
+            else 
+            {
+                console.log("write successfull");
+            }
         
-        const product=[]
-        product.push(this);
-        fs.appendFileSync(p,JSON.stringify(product),err=>{console.log(err)});
+        });
             
-        //products.push(this);
+    });  
     }
     static fetchAll(cb){
-        fs.readFileSync(p,'utf8',(err,data)=>{
+        fs.readFile(p,'utf8',(err,data)=>{
             if(!err){
                 cb(JSON.parse(data));
             }

@@ -8,6 +8,7 @@ const productscontroller= require('../controllers/products');
 
 router.get('/add-product',productscontroller.getaddproductpage);
 
-router.post('/product',productscontroller.postproductpage);
+router.post('/add-product',productscontroller.postaddproductpage);
+router.post('/product', productscontroller.getproductpage);
 
 module.exports=router;

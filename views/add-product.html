@@ -12,14 +12,15 @@
     <header class="main_header">
         <nav class="main_header_nav">
             <ul class="main_header_item_list">
-                <li class="main_header_item"><a href="/">Shop</a></li>
+                <li class="main_header_item"><a href="/shop">Shop</a></li>
                 <li class="main_header_item"><a href="/admin/add-product">Add Product</a></li>
                 <li class="main_header_item"><a href="/contactus">Contact Us</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <form action="/admin/product" method="POST" class="product-form">
+        <form action="/admin/add-product" method="POST" class="product-form">
+            <script>console.log('inside addprdct.html file')</script>
             <div class="form-control">
             <label>Title</label>
             <input type="text" name="title">

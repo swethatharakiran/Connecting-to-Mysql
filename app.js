@@ -1,6 +1,7 @@
 const express=require('express');
 const path=require('path');
 const app=express();
+const db=require('./util/database');//database.js
 
 app.use(express.static(path.join(__dirname,'public')));
 const adminroutes=require('./routes/admin');//admin.js
